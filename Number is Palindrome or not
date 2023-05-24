@@ -22,9 +22,6 @@ else:
 # for i in range(count):
 #     list[i]=num%10
 #     num=num//10
-  
-# for i in range(count):
-#     print(list[i])
     
 # rev_num=0
 
