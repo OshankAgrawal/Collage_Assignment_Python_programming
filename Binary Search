@@ -1,0 +1,49 @@
+print("First of all you have to create a list.")
+
+num = int(input("Enter the number of element in list."))
+
+array = []
+
+for i in range(0,num):
+    print("Enter the value of ",i+1," element.")
+    array.append(int(input()))
+
+array.sort()
+print(array)
+
+def binary_search(array,low,high,num):
+    if high >= low :
+        mid = (low + high) // 2
+        if array[mid] == num:
+            return mid
+        elif array[mid]>num:
+            return binary_search(array,low,mid-1,num)
+        else:
+            return binary_search(array,mid+1,high,num)
+    else:
+        return -1
+    
+opt = 1
+while opt == 1 :
+    num = int(input("Enter the number which you want to search inside the list."))
+
+    a = binary_search(array,0,len(array)-1,num)
+
+    if a == -1 :
+        print(num,"is not present inside the list.")
+    else:
+        print(num,"present inside the list at",a+1,"th position.")
+
+    while 1 :
+        print("Enter 1 if you want to seach the next element\nEnter 2 if you don't want to seach next element")
+        opt = int(input())
+
+        if opt == 1:
+            break
+        elif opt == 2:
+            break
+        else:
+            print("Choose approprite option.")
+            continue
+        
+print("Thank you....")  
